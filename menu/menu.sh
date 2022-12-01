@@ -197,6 +197,7 @@ echo -e " 27 ⸩ Sett AutoReboot"
 echo -e " 28 ⸩ Clear Log"
 echo -e " 29 ⸩ Change SSH Banner"
 echo -e " 30 ⸩ Kernel Update"
+echo -e " 31 ⸩ Status Service"
 echo -e ""
 echo -e "${red}══════════════════════════════════════════════════════════${NC}"
 echo -e " 0 ⸩ Reboot"
@@ -236,6 +237,7 @@ case $opt in
 28) clear ; clear-log ;;
 25) clear ; nano /etc/issue.net ;;
 26) clear ; kernel-updt ;;
+27) clear ; status ;;
 0) clear ; reboot ;;
 x) exit ;;
 *) sleep 1; menu ;;
