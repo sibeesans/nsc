@@ -32,9 +32,42 @@ sleep 3
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green Silahkan masukan sub domain anda $NC"
-echo -e "$green Jika tidak punya silahkan klik [ Ctrl+C ] • To-Exit $NC"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-read -p " Hostname / Domain: " host
+ONE}/dns_records/${RECORD}" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" \
+     --data '{"type":"A","name":"'${SUB_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}')
+
+WILD_DOMAIN="*.$sub"
+set -euo pipefail
+echo ""
+echo "Updating DNS for ${WILD_DOMAIN}..."
+ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" | jq -r .result[0].id)
+
+RECORD=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records?name=${WILD_DOMAIN}" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" | jq -r .result[0].id)
+
+if [[ "${#RECORD}" -le 10 ]]; then
+     RECORD=$(curl -sLX POST "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" \
+     --data '{"type":"A","name":"'${WILD_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}' | jq -r .result.id)
+fi
+
+RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records/${RECORD}" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" \
+     --data '{"type":"A","name":"'${WILD_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}')
+clear
+echo -e "[ ${red}DOMAIN${NC} ] : $SUB_DOMAIN"
+sleep 5
 mkdir -p /etc/
 mkdir -p /etc/xray
 mkdir -p /etc/v2ray
@@ -49,9 +82,9 @@ mkdir -p /var/log/v2ray/
 mkdir /var/lib/premium-script;
 touch /etc/xray/clients.txt
 touch /etc/v2ray/clients.txt
-echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
-echo "$host" > /etc/v2ray/domain
-echo "$host" > /root/domain
+echo "IP=$SUB_DOMAIN" >> /var/lib/premium-script/ipvps.conf
+echo "$SUB_DOMAIN" > /etc/v2ray/domain
+echo "$SUB_DOMAIN" > /root/domain
 
 clear
 secs_to_human() {
