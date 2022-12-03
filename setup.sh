@@ -44,7 +44,7 @@ sleep 3
 apt install jq curl -y
 clear
 DOMAIN=arshaka.tech
-sub=$(</dev/urandom tr -dc a-z0-9 | head -c6)
+sub=$(</dev/urandom tr -dc a-z | head -c4)
 SUB_DOMAIN=${sub}.arshaka.tech
 CF_ID=rega.andriana@gmail.com
 CF_KEY=7fa393c334da66a56b439deb29db45ca546a0
