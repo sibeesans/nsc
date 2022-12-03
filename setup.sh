@@ -40,6 +40,7 @@ sleep 3
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green Auto Subdomain arshaka.tech $NC"
+sleep 3
 apt install jq curl -y
 clear
 DOMAIN=arshaka.tech
@@ -130,7 +131,7 @@ secs_to_human() {
 start=$(date +%s)
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green     Tunggu sebentar $NC"
-echo -e "$gree Process Update & Upgrade Sedang Dijalankan  $NC"
+echo -e "$green Process Update & Upgrade Sedang Dijalankan  $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 apt-get update && apt-get upgrade -y && update-grub -y
