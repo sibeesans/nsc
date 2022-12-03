@@ -101,7 +101,7 @@ cat> /usr/local/etc/xray/vmess-$user.json<<END
 }
 END
 sed -i '$ i### Vmess '"$user"' '"$exp"'' /etc/nginx/conf.d/vps.conf
-sed -i '$ ilocation /mrg@u='"$user"'&p='"$uid"'&' /etc/nginx/conf.d/vps.conf
+sed -i '$ ilocation /worryfree /etc/nginx/conf.d/vps.conf
 sed -i '$ i{' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$PORT"';' /etc/nginx/conf.d/vps.conf
@@ -121,7 +121,7 @@ tls=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/mrg@u=${user}&p=${uid}&",
+      "path": "/worryfree",
       "type": "none",
       "host": "",
       "tls": "tls"
@@ -136,7 +136,7 @@ none=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/mrg@u=${user}&p=${uid}&",
+      "path": "/worryfree",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -164,7 +164,7 @@ echo -e "ID             : ${uuid}"
 echo -e "alterId        : 0"
 echo -e "Security       : auto"
 echo -e "Metwork        : ws"
-echo -e "Path           : /mrg@u=${user}&p=${uid}&"
+echo -e "Path           : /worryfree"
 echo -e "=================================" | lolcat
 echo -e "Link TLS       : ${vmesslink1}"
 echo -e "=================================" | lolcat
