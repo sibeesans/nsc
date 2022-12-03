@@ -39,7 +39,7 @@ echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━�
 sleep 3
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green Silahkan masukan sub domain anda $NC"
+echo -e "$green Auto Subdomain arshaka.tech $NC"
 ONE}/dns_records/${RECORD}" \
      -H "X-Auth-Email: ${CF_ID}" \
      -H "X-Auth-Key: ${CF_KEY}" \
