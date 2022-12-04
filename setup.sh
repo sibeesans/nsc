@@ -49,9 +49,9 @@ mkdir -p /var/log/v2ray/
 mkdir /var/lib/premium-script;
 touch /etc/xray/clients.txt
 touch /etc/v2ray/clients.txt
-echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
-echo "$host" > /etc/v2ray/domain
-echo "$host" > /root/domain
+echo "IP=$SUB_DOMAIN" >> /var/lib/premium-script/ipvps.conf
+echo "$SUB_DOMAIN" > /etc/v2ray/domain
+echo "$SUB_DOMAIN" > /root/domain
 
 clear
 secs_to_human() {
