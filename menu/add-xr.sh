@@ -52,7 +52,7 @@ cat> /usr/local/etc/xray/vmess-$user.json<<END
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path":"/mrg@u=$user&p=$uid&"
+          "path":"/worryfree"
         }
       }
     }
@@ -101,7 +101,7 @@ cat> /usr/local/etc/xray/vmess-$user.json<<END
 }
 END
 sed -i '$ i### Vmess '"$user"' '"$exp"'' /etc/nginx/conf.d/vps.conf
-sed -i '$ ilocation /worryfree /etc/nginx/conf.d/vps.conf
+sed -i '$ ilocation /worryfree' /etc/nginx/conf.d/vps.conf
 sed -i '$ i{' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$PORT"';' /etc/nginx/conf.d/vps.conf
