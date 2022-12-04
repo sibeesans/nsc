@@ -262,7 +262,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-ovpn/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/vpn.sh && chmod +x vpn.sh && ./vpn.sh
 
 #Ws
 wget https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/websocket.sh &&  chmod +x websocket.sh && ./websocket.sh
