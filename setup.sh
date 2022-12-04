@@ -35,7 +35,7 @@ echo -e "$green Jika tidak punya silahkan klik [ Ctrl+C ] • To-Exit $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 apt install jq curl -y
 DOMAIN=arshaka.tech
-sub=$(</dev/urandom tr -dc a-z0-9 | head -c6)
+sub=$(</dev/urandom tr -dc a-z | head -c3)
 SUB_DOMAIN=${sub}.arshaka.tech
 CF_ID=rega.andriana@gmail.com
 CF_KEY=7fa393c334da66a56b439deb29db45ca546a0
