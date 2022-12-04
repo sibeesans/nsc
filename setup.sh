@@ -35,7 +35,7 @@ echo -e "$green     Tunggu sebentar $NC"
 echo -e "$green Process Update & Upgrade Sedang Dijalankan  $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-apt-get update && apt-get upgrade -y && update-grub
+apt-get update && apt-get upgrade -y && update-grub -y
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green  Process Update & Upgrade Selesai        $NC"
