@@ -12,8 +12,6 @@ timedatectl set-timezone Asia/Jakarta
 chronyc sourcestats -v
 chronyc tracking -v
 date
-#stop nginx
-systemctl stop nginx
 mkdir -p /etc/trojan/
 touch /etc/trojan/akun.conf
 # install v2ray
