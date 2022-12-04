@@ -29,8 +29,8 @@ nginx_status=$(systemctl status nginx | grep Active | awk '{print $3}' | cut -d 
 cron_service=$(/etc/init.d/cron status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 fail2ban_service=$(/etc/init.d/fail2ban status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #wg="$(systemctl show wg-quick@wg0.service --no-page)"
-swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)                                     
-strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
+#swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)                                     
+#strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
 #sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
 # Color Validation
