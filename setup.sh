@@ -78,6 +78,7 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
      -H "X-Auth-Key: ${CF_KEY}" \
      -H "Content-Type: application/json" \
      --data '{"type":"A","name":"'${SUB_DOMAIN}'","content":"'${IP2}'","ttl":120,"proxied":false}')
+clear
 echo -e "[ ${red}DOMAIN${NC} ] : $SUB_DOMAIN"
 sleep 5
 clear
@@ -116,6 +117,7 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 sleep 2
 clear
 wget https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+systemctl stop nginx
 #install ssr
 #echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 ##echo -e "$green          Install SSR                $NC"
@@ -251,6 +253,7 @@ cat>/usr/local/etc/xray/trojanws.json<<EOF
   }
 }
 EOF
+systemctl restart nginx
 systemctl start xray@trojanws
 systemctl enable xray@trojanws
 systemctl restart xray@trojanws
