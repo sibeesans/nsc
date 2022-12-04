@@ -13,7 +13,7 @@ ver=$VERSION_ID
 #detail nama perusahaan
 country=ID
 state=Indonesia
-locality=JawaBarar
+locality=JawaBarat
 organization=MRG
 organizationalunit=mrg.my.is
 commonname=www.mrg.my.id
