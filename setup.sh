@@ -34,7 +34,7 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$green Silahkan masukan sub domain anda $NC"
 echo -e "$green Jika tidak punya silahkan klik [ Ctrl+C ] • To-Exit $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-read -p " Hostname / Domain: " host
+wget https://raw.githubusercontent.com/Rega23/new-sc/main/cf.sh && chmod +x cf.sh && ./cf.sh
 mkdir -p /etc/
 mkdir -p /etc/xray
 mkdir -p /etc/v2ray
@@ -291,7 +291,7 @@ echo -e "━━━━━━━━━━━━━━━━━━━━━━━�
 echo -e ""
 sleep 3
 echo -e ""
-
+rm -f /root/cf.sh
 rm -f /root/setup.sh
 rm -f /root/.bash_history
 echo -ne "[ ${yell}WARNING${NC} ] Reboot VPS? (y/n)? "
