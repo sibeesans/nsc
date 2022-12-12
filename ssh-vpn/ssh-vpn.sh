@@ -20,7 +20,7 @@ commonname=www.mrg.my.id
 email=admin@mrg.my.id
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/sibeeesans/nsc/main/ssh-vpn/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -147,14 +147,14 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/sibeeesans/nsc/main/ssh-vpn/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/nginx.conf"
 mkdir -p /home/vps/public_html
 
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -195,7 +195,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/ssh-vpn/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/sibeesans/nscw-sc/main/ssh-vpn/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -216,13 +216,6 @@ rm -f /root/vnstat-2.7.tar.gz
 rm -rf /root/vnstat-2.7
 
 cd
-#install sslh
-#apt-get install sslh -y
-
-#konfigurasi
-#port 443 to 77 and 777
-#wget -O /etc/default/sslh "https://raw.githubusercontent.com/Endka22/Autosc/main/sslh.conf"
-#service sslh restart
 
 # install stunnel
 apt install stunnel4 -y
@@ -262,10 +255,10 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/sibeeesans/nsc/main/ssh-vpn/vpn.sh && chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/vpn.sh && chmod +x vpn.sh && ./vpn.sh
 
 #Ws
-wget https://raw.githubusercontent.com/sibeeesans/nsc/main/ssh-vpn/websocket.sh &&  chmod +x websocket.sh && ./websocket.sh
+wget https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/websocket.sh &&  chmod +x websocket.sh && ./websocket.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -303,7 +296,7 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 #OHP
-#wget "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/ohp.sh" && chmod +x ohp.sh && ./ohp.sh
+#wget "https://raw.githubusercontent.com/sibeesans/nscw-sc/main/menu/ohp.sh" && chmod +x ohp.sh && ./ohp.sh
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
