@@ -150,7 +150,7 @@ tls2=`cat<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/arshaka",
+      "path": "/worryfree",
       "type": "none",
       "host": "",
       "tls": "tls"
