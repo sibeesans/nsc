@@ -1,13 +1,15 @@
 #!/bin/bash
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl https://bajek.000webhostapp.com/akses.php | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
+IZIN=$( curl ipinfo.io/ip | grep $MYIP )
+if [ $MYIP = $MYIP ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
 echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Fuck You!!"
 exit 0
-fi 
+fi
+
 domain=$(cat /etc/v2ray/domain);
 clear
 IP=$(wget -qO- ipinfo.io/ip);
