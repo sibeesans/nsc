@@ -351,9 +351,6 @@ wget -O port-vless "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/po
 wget -O wbmn "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/webmin.sh"
 wget -O xp "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/xp.sh"
 wget -O tessh "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/tessh.sh"
-wget -O trj "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/trj.sh"
-wget -O wss "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/wss.sh"
-wget -O vls "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/vls.sh"
 wget -O updatee "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/updatee.sh"
 wget -O auto-reboot "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/auto-reboot.sh"
 wget -O clear-log "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/clear-log.sh"
@@ -397,9 +394,6 @@ chmod +x port-vless
 chmod +x wbmn
 chmod +x xp
 chmod +x tessh
-chmod +x trj
-chmod +x wss
-chmod +x vls
 chmod +x updatee
 chmod +x auto-reboot
 chmod +x clear-log
@@ -455,10 +449,6 @@ shc -r -f xp -o xp
 shc -r -f m-system -o m-system
 sleep 0.5
 shc -r -f tessh -o tessh
-shc -r -f trj -o trj
-sleep 0.5
-shc -r -f wss -o wss
-shc -r -f vls -o vls
 shc -r -f updatee -o updatee
 sleep 0.5
 shc -r -f auto-reboot -o auto-reboot
