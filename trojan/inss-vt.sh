@@ -117,25 +117,20 @@ systemctl enable trojan
 systemctl restart v2ray
 systemctl enable v2ray
 cd /usr/bin
-wget -O addws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/addws.sh"
-wget -O addvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/addvless.sh"
-wget -O delws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/delws.sh"
-wget -O delvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/delvless.sh"
-wget -O cekws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cekws.sh"
-wget -O cekvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cekvless.sh"
-wget -O renewws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renewws.sh"
-wget -O renewvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renewvless.sh"
-wget -O renew-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renew-tr.sh"
-wget -O xp-ws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/xp-ws.sh"
-wget -O xp-vless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/xp-vless.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cert.sh"
-wget -O add-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/add-tr.sh"
-wget -O del-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/del-tr.sh"
-wget -O cek-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cek-tr.sh"
-
-wget -O add-trg "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/addtrgo.sh"
-wget -O del-trg "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/deltrgo.sh"
-wget -O renew-trg "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renew-trg.sh"
+wget -O cekws "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/cekws.sh"
+wget -O cekvless "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/cekvless.sh"
+wget -O renewws "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/renewws.sh"
+wget -O renewvless "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/renewvless.sh"
+wget -O renew-tr "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/renew-tr.sh"
+wget -O xp-ws "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/xp-ws.sh"
+wget -O xp-vless "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/xp-vless.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/cert.sh"
+wget -O add-tr "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/add-tr.sh"
+wget -O del-tr "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/del-tr.sh"
+wget -O cek-tr "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/cek-tr.sh"
+wget -O add-trg "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/addtrgo.sh"
+wget -O del-trg "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/deltrgo.sh"
+wget -O renew-trg "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/renew-trg.sh"
 
 wget -O renew-trg "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/xp-tr.sh"
 chmod +x del-tr
@@ -144,10 +139,6 @@ chmod +x add-trg
 chmod +x del-trg
 chmod +x renew-trg
 chmod +x xp-tr
-chmod +x addws
-chmod +x addvless
-chmod +x delws
-chmod +x delvless
 chmod +x cekws
 chmod +x cekvless
 chmod +x renewws
@@ -157,22 +148,22 @@ chmod +x xp-ws
 chmod +x xp-vless
 chmod +x certv2ray
 
-wget -O add-xr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/add-xr.sh"
-wget -O add-xvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/add-xvless.sh"
-wget -O del-xr "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/del-xr.sh"
-wget -O del-xvless "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/del-xvless.sh"
-wget -O cekws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cekws.sh"
-wget -O cekvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cekvless.sh"
-wget -O renewws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renewws.sh"
-wget -O renewvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renewvless.sh"
-wget -O renewtr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renewtr.sh"
-wget -O xp-xr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/xp-xr.sh"
-wget -O xp-xvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/xp-xvless.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cert.sh"
-wget -O add-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/add-tr.sh"
-wget -O del-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/del-tr.sh"
-wget -O cek-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cek-tr.sh"
-wget -O xp-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/xp-tr.sh"
+wget -O add-xr "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/add-xr.sh"
+wget -O add-xvless "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/add-xvless.sh"
+wget -O del-xr "https://raw.githubusercontent.com/sibeesans/nscw-sc/main/menu/del-xr.sh"
+wget -O del-xvless "https://raw.githubusercontent.com/sibeesans/nscw-sc/main/menu/del-xvless.sh"
+wget -O cekws "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/cekws.sh"
+wget -O cekvless "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/cekvless.sh"
+wget -O renewws "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/renewws.sh"
+wget -O renewvless "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/renewvless.sh"
+wget -O renewtr "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/renewtr.sh"
+wget -O xp-xr "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/xp-xr.sh"
+wget -O xp-xvless "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/xp-xvless.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/cert.sh"
+wget -O add-tr "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/add-tr.sh"
+wget -O del-tr "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/del-tr.sh"
+wget -O cek-tr "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/cek-tr.sh"
+wget -O xp-tr "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/xp-tr.sh"
 chmod +x add-tr
 chmod +x del-tr
 chmod +x cek-tr
@@ -201,8 +192,6 @@ shc -r -f add-trg -o add-trg
 shc -r -f del-trg -o del-trg
 shc -r -f renew-trg -o cek-trg
 shc -r -f xp-tr -o xp-tr
-shc -r -f addws -o addws
-shc -r -f addvless -o addvless
 shc -r -f delws -o delws
 shc -r -f delvless -o delvless
 shc -r -f cekws -o cekws
