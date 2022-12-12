@@ -51,7 +51,7 @@ echo -e "Host           : ${domain}"
 echo -e "Port           : ${tr}"
 echo -e "Key            : ${user}"
 echo -e "Link           : ${trojanlink}"
-#echo -e "link2  		: ${trojanlink2}"
+echo -e "link2          : ${trojanlink2}"
 echo -e "=================================" | lolcat
 echo -e "Expired On     : $exp"
 echo -e "=================================" | lolcat
