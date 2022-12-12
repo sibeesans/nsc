@@ -20,7 +20,7 @@ commonname=www.mrg.my.id
 email=admin@mrg.my.id
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/ssh-vpn/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -147,9 +147,9 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/ssh-vpn/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/ssh-vpn/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
@@ -195,7 +195,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/ssh-vpn/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -262,10 +262,10 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/vpn.sh && chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/ssh-vpn/vpn.sh && chmod +x vpn.sh && ./vpn.sh
 
 #Ws
-wget https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/websocket.sh &&  chmod +x websocket.sh && ./websocket.sh
+wget https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/ssh-vpn/websocket.sh &&  chmod +x websocket.sh && ./websocket.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -298,12 +298,12 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/bannerssh.conf"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/ssh-vpn/bannerssh.conf"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 #OHP
-#wget "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/ohp.sh" && chmod +x ohp.sh && ./ohp.sh
+#wget "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/ohp.sh" && chmod +x ohp.sh && ./ohp.sh
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
@@ -323,28 +323,28 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O add-host "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/add-host.sh"
-wget -O about "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/about.sh"
-wget -O menu "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/trial.sh"
-wget -O hapus "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/hapus.sh"
-wget -O member "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/member.sh"
-wget -O delete "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/delete.sh"
-wget -O cek "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/cek.sh"
-wget -O restart "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/info.sh"
-wget -O ram "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/ram.sh"
-wget -O renew "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/renew.sh"
-wget -O autokill "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/tendang.sh"
-wget -O clear-log "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/clear-log.sh"
-wget -O change-port "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/change.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/port-ovpn.sh"
-wget -O port-ssl "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/port-ssl.sh"
-wget -O port-wg "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/port-wg.sh"
+wget -O add-host "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/add-host.sh"
+wget -O about "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/about.sh"
+wget -O menu "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/menu.sh"
+wget -O usernew "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/trial.sh"
+wget -O hapus "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/hapus.sh"
+wget -O member "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/member.sh"
+wget -O delete "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/delete.sh"
+wget -O cek "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/cek.sh"
+wget -O restart "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/info.sh"
+wget -O ram "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/ram.sh"
+wget -O renew "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/renew.sh"
+wget -O autokill "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/tendang.sh"
+wget -O clear-log "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/clear-log.sh"
+wget -O change-port "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/change.sh"
+wget -O port-ovpn "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/port-ovpn.sh"
+wget -O port-ssl "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/port-ssl.sh"
+wget -O port-wg "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/port-wg.sh"
 wget -O port-tr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/port-tr.sh"
 wget -O port-sstp "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/port-sstp.sh"
 wget -O port-squid "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/port-squid.sh"
