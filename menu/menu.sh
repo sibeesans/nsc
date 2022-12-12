@@ -212,8 +212,8 @@ case $opt in
 17) clear ; add-tr ;;
 18) clear ; del-tr ;;
 19) clear ; renew-tr ;;
-20) clear ; addtrgo ;;
-21) clear ; deltrgo ;;
+20) clear ; add-trg ;;
+21) clear ; del-trg ;;
 22) clear ; renew-trg ;;
 23) clear ; add-host ;;
 24) clear ; resett ;;
