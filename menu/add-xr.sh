@@ -57,6 +57,28 @@ cat> /usr/local/etc/xray/vmess-$user.json<<END
       }
     }
   ],
+[
+    {
+    "port":$PORT,
+      "listen": "127.0.0.1",
+      "tag": "vmess-in",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+        {
+            "id": "${uuid}",
+            "alterId": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path":"/arshaka"
+        }
+      }
+    }
+  ],
   "outbounds": [
     {
       "protocol": "freedom",
@@ -102,6 +124,7 @@ cat> /usr/local/etc/xray/vmess-$user.json<<END
 END
 sed -i '$ i### Vmess '"$user"' '"$exp"'' /etc/nginx/conf.d/vps.conf
 sed -i '$ ilocation /worryfree' /etc/nginx/conf.d/vps.conf
+sed -i '$ ilocation /arshaka' /etc/nginx/conf.d/vps.conf
 sed -i '$ i{' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$PORT"';' /etc/nginx/conf.d/vps.conf
@@ -137,6 +160,36 @@ none=`cat<<EOF
       "aid": "0",
       "net": "ws",
       "path": "/worryfree",
+      "type": "none",
+      "host": "${domain}",
+      "tls": "none"
+}
+EOF`
+tls=`cat<<EOF
+      {
+      "v": "2",
+      "ps": "${user}",
+      "add": "${domain}",
+      "port": "443",
+      "id": "${uuid}",
+      "aid": "0",
+      "net": "ws",
+      "path": "/arshaka",
+      "type": "none",
+      "host": "",
+      "tls": "tls"
+}
+EOF`
+none=`cat<<EOF
+      {
+      "v": "2",
+      "ps": "${user}",
+      "add": "${domain}",
+      "port": "80",
+      "id": "${uuid}",
+      "aid": "0",
+      "net": "ws",
+      "path": "/arshaka",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
