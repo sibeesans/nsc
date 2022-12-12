@@ -3,8 +3,8 @@
 # /usr/local/bin/ws-stunnel
 # /usr/local/bin/ws-ovpn
 [Unit]
-Description=SSH Over Websocket Python WORLDSSH
-Documentation=https://worldssh.tech
+Description=SSH Over Websocket Python BAGOES VPN
+Documentation=https://google.com
 After=network.target nss-lookup.target
 
 [Service]
