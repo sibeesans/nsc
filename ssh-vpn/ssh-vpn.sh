@@ -369,8 +369,8 @@ wget -O clearcache "https://raw.githubusercontent.com/sibeesans/nscc/main/menu/c
 wget -O restart "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/restart.sh"
 wget -O bw "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/bw.sh"
 wget -O resett "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/resett.sh"
-wget -O kernel-updt "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/kernel-updt.sh"
 chmod +x add-host
+chmod +x about
 chmod +x menu
 chmod +x usernew
 chmod +x trial
@@ -381,69 +381,63 @@ chmod +x cek
 chmod +x restart
 chmod +x speedtest
 chmod +x info
-chmod +x about
-chmod +x autokill
-chmod +x tendang
-chmod +x ceklim
 chmod +x ram
 chmod +x renew
+chmod +x autokill
+chmod +x ceklim
+chmod +x tendang
 chmod +x clear-log
 chmod +x change-port
 chmod +x port-ovpn
 chmod +x port-ssl
-chmod +x port-wg
-chmod +x port-sstp
 chmod +x port-tr
 chmod +x port-squid
 chmod +x port-ws
 chmod +x port-vless
 chmod +x wbmn
 chmod +x xp
-chmod +x m-system
 chmod +x tessh
-chmod +x ssstp
-chmod +x sssr
-chmod +x ltp
-chmod +x wgg
 chmod +x trj
 chmod +x wss
 chmod +x vls
 chmod +x updatee
-chmod +x clear-log
-chmod +x vpsinfo
-chmod +x status
-chmod +x about
-chmod +x bbr
 chmod +x auto-reboot
 chmod +x clear-log
+
+chmod +x m-system
+chmod +x info
+chmod +x vpsinfo
+chmod +x status
+chmod +x bbr
 chmod +x clearcache
 chmod +x restart
 chmod +x bw
-chmod +x resett
+chmod +x reset
+
 #enc
 echo -e "SHC STARTED..."
 shc -r -f add-host -o add-host
+shc -r -f about -o about
 shc -r -f menu -o menu
-shc -r -f usernew -o usernew
 sleep 0.5
+shc -r -f usernew -o usernew
 shc -r -f trial -o trial
 shc -r -f hapus -o hapus
-shc -r -f member -o member
 sleep 0.5
+shc -r -f member -o member
 shc -r -f delete -o delete
 shc -r -f cek -o cek
-shc -r -f restart -o restart
 sleep 0.5
+shc -r -f restart -o restart
 shc -r -f speedtest -o speedtest
 shc -r -f info -o info
-shc -r -f about -o about
-sleep 0.5
-shc -r -f autokill -o autokill
-shc -r -f tendang -o tendang
-shc -r -f ceklim -o ceklim
 sleep 0.5
 shc -r -f ram -o ram
 shc -r -f renew -o renew
+shc -r -f autokill -o autokill
+sleep 0.5
+shc -r -f ceklim -o ceklim
+shc -r -f tendang -o tendang
 shc -r -f clear-log -o clear-log
 sleep 0.5
 shc -r -f change-port -o change-port
@@ -461,20 +455,18 @@ shc -r -f xp -o xp
 shc -r -f m-system -o m-system
 sleep 0.5
 shc -r -f tessh -o tessh
-shc -r -f ssstp -o ssstp
-shc -r -f sssr -o sssr
-sleep 0.5
 shc -r -f trj -o trj
 sleep 0.5
 shc -r -f wss -o wss
 shc -r -f vls -o vls
 shc -r -f updatee -o updatee
 sleep 0.5
+shc -r -f auto-reboot -o auto-reboot
+shc -r -f clear-log -o clear-log
 shc -r -f vpsinfo -o vpsinfo
 shc -r -f status -o status
 shc -r -f bbr -o bbr
 sleep 0.5
-shc -r -f auto-reboot -o auto-reboot
 shc -r -f clearcache -o clearcache
 shc -r -f restart -o restart
 sleep 0.5
