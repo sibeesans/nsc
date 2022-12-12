@@ -149,7 +149,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/sibeeesans/nsc/main/ssh-vpn/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/sibeeesans/nsc/main/ssh-vpn/vps.conf"
+
 /etc/init.d/nginx restart
 
 # install badvpn
