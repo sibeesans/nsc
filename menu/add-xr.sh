@@ -1,18 +1,18 @@
 #!/bin/bash
-RED='\e[1;31m'
-GREEN='\e[0;32m'
-BLUE='\e[0;34m'
-NC='\e[0m'
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+#########################
+
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl https://bajek.000webhostapp.com/akses.php | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
+IZIN=$( curl ipinfo.io/ip | grep $MYIP )
+if [ $MYIP = $MYIP ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
 echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Fuck You!!"
 exit 0
-fi 
-
+fi
 clear
 source /var/lib/premium-script/ipvps.conf
 domain=$(cat /etc/v2ray/domain)
