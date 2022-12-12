@@ -9,21 +9,21 @@ namafolder="websocket-python"
 #System OpenSSH Websocket-SSH Python
 cd
 cd /etc/systemd/system/
-wget -O /etc/systemd/system/ws-openssh.service https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/ws-openssh.service
+wget -O /etc/systemd/system/ws-openssh.service https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/ws-openssh.service
 #System Dropbear Websocket-SSH Python
-wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/ws-dropbear.service
+wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/ws-dropbear.service
 #System SSL/TLS Websocket-SSH Python
-wget -O /etc/systemd/system/ws-stunnel.service https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/ws-stunnel.service
+wget -O /etc/systemd/system/ws-stunnel.service https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/ws-stunnel.service
 ##System Websocket-OpenVPN Python
-wget -O /etc/systemd/system/ws-ovpn.service https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/ws-ovpn.service
+wget -O /etc/systemd/system/ws-ovpn.service https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/ws-ovpn.service
 
 #Install Script Websocket-SSH Python
 cd
 cd /usr/local/bin/
-wget -O /usr/local/bin/ws-openssh https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/ws-openssh
-wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/ws-dropbear
-wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/ws-stunnel
-wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/ws-ovpn
+wget -O /usr/local/bin/ws-openssh https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/ws-openssh
+wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/ws-dropbear
+wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/ws-stunnel
+wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/ws-ovpn
 #
 chmod +x /usr/local/bin/ws-openssh
 chmod +x /usr/local/bin/ws-dropbear
