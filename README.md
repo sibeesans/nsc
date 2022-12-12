@@ -7,6 +7,6 @@ apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
 * 2. Install Semua Layanan VPN /Install All VPN Service
 
 ```html
- wget https://raw.githubusercontent.com/Rega23/new-sc/main/setup.sh && chmod +x setup.sh && ./setup.sh
+ wget https://raw.githubusercontent.com/sibeesans/nsc/main/setup.sh && chmod +x setup.sh && ./setup.sh
   
 ```
