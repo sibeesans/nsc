@@ -116,7 +116,7 @@ echo -e "$green      Install SSH OVPN               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/sibeeesans/nsc/main/ssh-vpn/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 systemctl stop nginx
 #install v2ray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -124,14 +124,14 @@ echo -e "$green  ISSUE CERT & Install TROJAN GFW       $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/sibeeesans/nsc/main/trojan/inss-vt.sh && chmod +x inss-vt.sh && screen -S v2ray ./inss-vt.sh
+wget https://raw.githubusercontent.com/sibeesans/nsc/main/trojan/inss-vt.sh && chmod +x inss-vt.sh && screen -S v2ray ./inss-vt.sh
 #Instal Xray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green          Install XRAY              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/sibeeesans/nsc/main/xray/xray.sh && chmod +x xray.sh && screen -S xray ./xray.sh
+wget https://raw.githubusercontent.com/sibeesans/nsc/main/xray/xray.sh && chmod +x xray.sh && screen -S xray ./xray.sh
 #set backup
 #echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 #echo -e "$green            SET BACKUP               $NC"
@@ -255,7 +255,7 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable autosett
-wget -O /etc/set.sh "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/set.sh"
+wget -O /etc/set.sh "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/set.sh"
 chmod +x /etc/set.sh
 history -c
 clear
