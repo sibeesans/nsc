@@ -27,9 +27,7 @@ ssh_service=$(/etc/init.d/ssh status | grep Active | awk '{print $3}' | cut -d "
 vnstat_service=$(/etc/init.d/vnstat status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 nginx_status=$(systemctl status nginx | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 cron_service=$(/etc/init.d/cron status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-fail2ban_service=$(/etc/init.d/fail2ban status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-#wg="$(systemctl show wg-quick@wg0.service --no-page)"
-#swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)                                     
+fail2ban_service=$(/etc/init.d/fail2ban status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                     
 strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)  
 sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
@@ -115,13 +113,6 @@ else
    status_tls_v2ray="Not Running [ \e[31m❌\e[0m ]"
 fi
 
-# ShadowsocksR Status
-if [[ $ssr_status == "active" ]] ; then
-  status_ssr="Running [ \033[32mok\033[0m ]"
-else
-  status_ssr="Not Running [ \e[31m❌\e[0m ]"
-fi
-
 # Sodosok
 if [[ $status_text == "active" ]] ; then
   status_sodosok="Running [ \033[32mok\033[0m ]"
@@ -134,13 +125,6 @@ if [[ $trojan_server == "running" ]]; then
    status_virus_trojan="Running [ \033[32mok\033[0m ]"
 else
    status_virus_trojan="Not Running [ \e[31m❌\e[0m ]"
-fi
-
-# Status Service Wireguard
-if [[ $swg == "active" ]]; then
-  status_wg="Running [ \033[32mok\033[0m ]"
-else
-  status_wg="Not Running [ \e[31m❌\e[0m ]"
 fi
 
 # Status Service Dropbear
@@ -175,10 +159,7 @@ echo -e "   XRAY CORE      : $status_xtls_xray"
 echo -e "   XRAY TROJAN    : $status_xtls_xray"
 #echo -e "   V2RAY CORE     : $status_tls_v2ray"
 #echo -e "   V2RAY TROJAN   : $status_tls_v2ray"
-#echo -e "   SSR            : $status_ssr"
-#echo -e "   Shadowsocks    : $status_sodosok"
 echo -e "   Trojan GFW     : $status_virus_trojan"
-#echo -e "   Wireguard      : $status_wg"
 echo -e "\033[0;33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[0m"
 echo ""
 #read -n 1 -s -r -p "Press any key to back on  menu"
