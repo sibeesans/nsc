@@ -170,7 +170,7 @@ cat>/usr/local/etc/xray/trojanws.json<<EOF
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/woryfree",
+          "path": "/worryfree",
           "headers": {
             "Host": ""
           }
