@@ -52,7 +52,7 @@ cat> /usr/local/etc/xray/vless-$user.json<<END
       "streamSettings": {
         "network": "ws", 
         "wsSettings": {
-        "path":"/mrg@u=$user&p=$uid&"
+        "path":"/vless"
         }
       }
     }
@@ -101,7 +101,7 @@ cat> /usr/local/etc/xray/vless-$user.json<<END
 }
 END
 sed -i '$ i### Vless '"$user"' '"$exp"'' /etc/nginx/conf.d/vps.conf
-sed -i '$ ilocation /worldssh@u='"$user"'&p='"$uid"'&' /etc/nginx/conf.d/vps.conf
+sed -i '$ ilocation /vless' /etc/nginx/conf.d/vps.conf
 sed -i '$ i{' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$PORT"';' /etc/nginx/conf.d/vps.conf
@@ -112,8 +112,8 @@ sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/vps.conf
 sed -i '$ i}' /etc/nginx/conf.d/vps.conf
-vlesslink1="vless://${uuid}@${domain}:443/?tyepe=ws&encryption=none&host=bug.com&path=%2Fmrg@u%3D${user}%26p%3D${uid}%26&security=tls&encryption=none&type=ws#${user}"
-vlesslink2="vless://${uuid}@${domain}:80?path=%2Fmrg@u%3D${user}%26p%3D${uid}%26&encryption=none&type=ws#${user}"
+vlesslink1="vless://${uuid}@${domain}:443/?tyepe=ws&encryption=none&host=bug.com&path=/vless&security=tls&encryption=none&type=ws#${user}"
+vlesslink2="vless://${uuid}@${domain}:80?path=/vless&encryption=none&type=ws#${user}"
 systemctl start xray@vless-$user
 systemctl enable xray@vless-$user
 #echo -e "\033[32m[Info]\033[0m Xray-Vless Start Successfully !"
@@ -128,10 +128,9 @@ echo -e "Domain         : ${domain}"
 echo -e "Port TLS       : 443"
 echo -e "Port NTLS      : 80"
 echo -e "ID             : ${uuid}"
-#echo -e "AlterId        :))
 echo -e "Encryption     : none"
 echo -e "Network        : ws"
-echo -e "Path           : /mrg@u=${user}&p=${uid}&"
+echo -e "Path           : /vless"
 echo -e "=================================" | lolcat
 echo -e "Link TLS       : ${vlesslink1}"
 echo -e "=================================" | lolcat
