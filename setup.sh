@@ -116,37 +116,22 @@ echo -e "$green      Install SSH OVPN               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/Rega23/new-sc/main/ssh-vpn/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/sibeeesans/nsc/main/ssh-vpn/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 systemctl stop nginx
-#install ssr
-#echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-##echo -e "$green          Install SSR                $NC"
-#echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-#sleep 2
-#clear
-#wget https://raw.githubusercontent.com/Afdhan/new/main/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
-#wget https://raw.githubusercontent.com/Afdhan/new/main/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
-#install wireguard
-#echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-#echo -e "$green        Install Wireguard              $NC"
-#echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-#sleep 2
-#clear
-#wget https://raw.githubusercontent.com/Afdhan/new/main/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 #install v2ray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green  ISSUE CERT & Install TROJAN GFW       $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/Rega23/new-sc/main/trojan/inss-vt.sh && chmod +x inss-vt.sh && screen -S v2ray ./inss-vt.sh
+wget https://raw.githubusercontent.com/sibeeesans/nsc/main/trojan/inss-vt.sh && chmod +x inss-vt.sh && screen -S v2ray ./inss-vt.sh
 #Instal Xray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green          Install XRAY              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/Rega23/new-sc/main/xray/xray.sh && chmod +x xray.sh && screen -S xray ./xray.sh
+wget https://raw.githubusercontent.com/sibeeesans/nsc/main/xray/xray.sh && chmod +x xray.sh && screen -S xray ./xray.sh
 #set backup
 #echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 #echo -e "$green            SET BACKUP               $NC"
@@ -156,9 +141,6 @@ wget https://raw.githubusercontent.com/Rega23/new-sc/main/xray/xray.sh && chmod 
 #wget https://raw.githubusercontent.com/Afdhan/new/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 
 rm -f /root/ssh-vpn.sh
-rm -f /root/ss.sh
-rm -f /root/ssr.sh
-rm -f /root/wg.sh
 rm -f /root/inss-vt.sh
 rm -f /root/set-br.sh
 rm -f /root/xray.sh
@@ -301,10 +283,6 @@ echo "   - OHP Dropbear            : 8282"  | tee -a log-install.txt
 echo "   - OHP OVPN                : 8383"  | tee -a log-install.txt
 echo "   - Badvpn                  : 7300"  | tee -a log-install.txt
 #echo "   - Nginx                   : 81, 80"  | tee -a log-install.txt
-#echo "   - Wireguard               : 7070"  | tee -a log-install.txt
-#echo "   - Shadowsocks-R           : 1443-1543"  | tee -a log-install.txt
-#echo "   - SS-OBFS TLS             : 2443-2543"  | tee -a log-install.txt
-#echo "   - SS-OBFS HTTP            : 3443-3543"  | tee -a log-install.txt
 echo "   - XRAY VMESS XTLS SPLICE  : 443"  | tee -a log-install.txt
 echo "   - XRAY VMESS XTLS DIRECT  : 443"  | tee -a log-install.txt
 echo "   - XRAY VMESS WS TLS       : 443"  | tee -a log-install.txt
