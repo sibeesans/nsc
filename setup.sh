@@ -142,7 +142,7 @@ wget https://raw.githubusercontent.com/sibeesans/nsc/main/xray/xray.sh && chmod 
 
 rm -f /root/ssh-vpn.sh
 rm -f /root/inss-vt.sh
-rm -f /root/set-br.sh
+#rm -f /root/set-br.sh
 rm -f /root/xray.sh
 
 domain=$(cat /etc/v2ray/domain)
@@ -170,7 +170,7 @@ cat>/usr/local/etc/xray/trojanws.json<<EOF
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/worryfree",
+          "path": "/trgo",
           "headers": {
             "Host": ""
           }
@@ -243,7 +243,7 @@ systemctl restart xray@trojanws
 cat <<EOF> /etc/systemd/system/autosett.service
 [Unit]
 Description=autosetting
-Documentation=https://worldssh.tech
+Documentation=https://google.com
 
 [Service]
 Type=oneshot
