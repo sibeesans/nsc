@@ -15,7 +15,7 @@ date
 mkdir -p /etc/trojan/
 touch /etc/trojan/akun.conf
 # install v2ray
-wget https://raw.githubusercontent.com/Rega23/new-sc/main/trojan/go.sh && chmod +x go.sh && ./go.sh
+wget https://raw.githubusercontent.com/sibeeesans/nsc/main/trojan/go.sh && chmod +x go.sh && ./go.sh
 rm -f /root/go.sh
 bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
 #cert
@@ -117,28 +117,27 @@ systemctl enable trojan
 systemctl restart v2ray
 systemctl enable v2ray
 cd /usr/bin
-wget -O addws "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/addws.sh"
-wget -O addvless "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/addvless.sh"
-wget -O delws "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/delws.sh"
-wget -O delvless "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/delvless.sh"
-wget -O cekws "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/cekws.sh"
-wget -O cekvless "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/cekvless.sh"
-wget -O renewws "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/renewws.sh"
-wget -O renewvless "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/renewvless.sh"
-wget -O renew-tr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/renew-tr.sh"
-wget -O xp-ws "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/xp-ws.sh"
-wget -O xp-vless "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/xp-vless.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/cert.sh"
-wget -O add-tr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/add-tr.sh"
-wget -O del-tr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/del-tr.sh"
-wget -O cek-tr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/cek-tr.sh"
+wget -O addws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/addws.sh"
+wget -O addvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/addvless.sh"
+wget -O delws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/delws.sh"
+wget -O delvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/delvless.sh"
+wget -O cekws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cekws.sh"
+wget -O cekvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cekvless.sh"
+wget -O renewws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renewws.sh"
+wget -O renewvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renewvless.sh"
+wget -O renew-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renew-tr.sh"
+wget -O xp-ws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/xp-ws.sh"
+wget -O xp-vless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/xp-vless.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cert.sh"
+wget -O add-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/add-tr.sh"
+wget -O del-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/del-tr.sh"
+wget -O cek-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cek-tr.sh"
 
-wget -O add-trg "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/addtrgo.sh"
-wget -O del-trg "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/deltrgo.sh"
-wget -O renew-trg "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/renew-trg.sh"
+wget -O add-trg "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/addtrgo.sh"
+wget -O del-trg "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/deltrgo.sh"
+wget -O renew-trg "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renew-trg.sh"
 
-wget -O xp-tr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/xp-tr.sh"
-chmod +x add-tr
+wget -O renew-trg "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/xp-tr.sh"
 chmod +x del-tr
 chmod +x cek-tr
 chmod +x add-trg
@@ -158,22 +157,22 @@ chmod +x xp-ws
 chmod +x xp-vless
 chmod +x certv2ray
 
-wget -O add-xr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/add-xr.sh"
-wget -O add-xvless "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/add-xvless.sh"
-wget -O del-xr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/del-xr.sh"
-wget -O del-xvless "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/del-xvless.sh"
-wget -O cekws "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/cekws.sh"
-wget -O cekvless "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/cekvless.sh"
-wget -O renewws "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/renewws.sh"
-wget -O renewvless "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/renewvless.sh"
-wget -O renewtr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/renewtr.sh"
-wget -O xp-xr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/xp-xr.sh"
-wget -O xp-xvless "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/xp-xvless.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/cert.sh"
-wget -O add-tr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/add-tr.sh"
-wget -O del-tr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/del-tr.sh"
-wget -O cek-tr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/cek-tr.sh"
-wget -O xp-tr "https://raw.githubusercontent.com/Rega23/new-sc/main/menu/xp-tr.sh"
+wget -O add-xr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/add-xr.sh"
+wget -O add-xvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/add-xvless.sh"
+wget -O del-xr "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/del-xr.sh"
+wget -O del-xvless "https://raw.githubusercontent.com/sibeeesans/nscw-sc/main/menu/del-xvless.sh"
+wget -O cekws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cekws.sh"
+wget -O cekvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cekvless.sh"
+wget -O renewws "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renewws.sh"
+wget -O renewvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renewvless.sh"
+wget -O renewtr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/renewtr.sh"
+wget -O xp-xr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/xp-xr.sh"
+wget -O xp-xvless "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/xp-xvless.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cert.sh"
+wget -O add-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/add-tr.sh"
+wget -O del-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/del-tr.sh"
+wget -O cek-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/cek-tr.sh"
+wget -O xp-tr "https://raw.githubusercontent.com/sibeeesans/nsc/main/menu/xp-tr.sh"
 chmod +x add-tr
 chmod +x del-tr
 chmod +x cek-tr
