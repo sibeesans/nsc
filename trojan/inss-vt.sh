@@ -15,7 +15,7 @@ date
 mkdir -p /etc/trojan/
 touch /etc/trojan/akun.conf
 # install v2ray
-wget https://raw.githubusercontent.com/sibeeesans/nsc/main/trojan/go.sh && chmod +x go.sh && ./go.sh
+wget https://raw.githubusercontent.com/sibeesans/nsc/main/trojan/go.sh && chmod +x go.sh && ./go.sh
 rm -f /root/go.sh
 bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
 #cert
