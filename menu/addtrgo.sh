@@ -29,7 +29,7 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#tls$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/trojanws.json
 systemctl restart xray@trojanws
-trojanlink="trojan-go://${uuid}@${domain}:443/?sni=${domain}&type=ws&host=${domain}&path=/WorldSSH&encryption=none#${user}"
+trojanlink="trojan-go://${uuid}@${domain}:443/?sni=${domain}&type=ws&host=${domain}&path=/trgo&encryption=none#${user}"
 echo -e "### $user $exp" >> /etc/trojan/trojango.conf
 clear
 echo -e "=================================" | lolcat
@@ -41,7 +41,7 @@ echo -e "Port           : 443"
 echo -e "Key            : ${uuid}"
 echo -e "Network        : ws"
 echo -e "Encryption     : none"
-echo -e "Path           : /mrg"
+echo -e "Path           : /trgo"
 echo -e "=================================" | lolcat
 echo -e "Link           : ${trojanlink}"
 echo -e "=================================" | lolcat
