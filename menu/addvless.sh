@@ -1,9 +1,18 @@
 #!/bin/bash
-RED='\e[1;31m'
-GREEN='\e[0;32m'
-BLUE='\e[0;34m'
-NC='\e[0m'
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+#########################
+
 MYIP=$(wget -qO- ipinfo.io/ip);
+echo "Checking VPS"
+IZIN=$( curl ipinfo.io/ip | grep $MYIP )
+if [ $MYIP = $MYIP ]; then
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Fuck You!!"
+exit 0
+fi
 
 clear
 domain=$(cat /etc/v2ray/domain)
@@ -43,7 +52,7 @@ cat> /etc/v2ray/vless-$user.json<<END
       "streamSettings": {
         "network": "ws", 
         "wsSettings": {
-        "path":"/endka@u=$user&p=$uid&"
+        "path":"/vless"
         }
       }
     }
@@ -92,7 +101,7 @@ cat> /etc/v2ray/vless-$user.json<<END
 }
 END
 sed -i '$ i### Vless '"$user"' '"$exp"'' /etc/nginx/conf.d/vps.conf
-sed -i '$ ilocation /endka@u='"$user"'&p='"$uid"'&' /etc/nginx/conf.d/vps.conf
+sed -i '$ ilocation /vless' /etc/nginx/conf.d/vps.conf
 sed -i '$ i{' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_pass http://127.0.0.1:'"$PORT"';' /etc/nginx/conf.d/vps.conf
@@ -103,8 +112,8 @@ sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/vps.conf
 sed -i '$ i}' /etc/nginx/conf.d/vps.conf
-vlesslink1="vless://${uuid}@${domain}:443/?tyepe=ws&encryption=none&host=bug.com&path=%2Fendka@u%3D${user}%26p%3D${uid}%26&security=tls&encryption=none&type=ws#${user}"
-vlesslink2="vless://${uuid}@${domain}:80?path=%2Fendka@u%3D${user}%26p%3D${uid}%26&encryption=none&type=ws#${user}"
+vlesslink1="vless://${uuid}@${domain}:443/?tyepe=ws&encryption=none&host=bug.com&path=/vless&security=tls&encryption=none&type=ws#${user}"
+vlesslink2="vless://${uuid}@${domain}:80?path=/vless&encryption=none&type=ws#${user}"
 systemctl start v2ray@vless-$user
 systemctl enable v2ray@vless-$user
 systemctl reload nginx
@@ -121,7 +130,7 @@ echo -e "id             : ${uuid}"
 echo -e "alterId        : 2"
 echo -e "Security       : auto"
 echo -e "network        : ws"
-echo -e "path           : /endka@u=${user}&p=${uid}&"
+echo -e "path           : /vless"
 echo -e "================================="
 echo -e "link TLS       : ${vlesslink1}"
 echo -e "================================="
@@ -130,4 +139,4 @@ echo -e "=================================" | lolcat
 echo -e "Created        : $now"
 echo -e "Expired On     : $exp"
 echo -e "=================================" lolcat
-echo -e "~ AutoScript WORLDSSH"
+echo -e "~ AutoScript BAGOES VPN"
