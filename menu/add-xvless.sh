@@ -22,10 +22,8 @@ if [ $? -eq 0 ]; then
 echo -e "Username Sudah Ada"
 exit 0
 fi
-PORT=$((RANDOM + 10000))
 read -p "Expired (days): " masaaktif
 uuid=$(cat /proc/sys/kernel/random/uuid)
-uid=$(cat /proc/sys/kernel/random/uuid | sed 's/[-]//g' | head -c 14; echo;)
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 now=`date +"%Y-%m-%d"`
 cat> /usr/local/etc/xray/vless-$user.json<<END
@@ -37,10 +35,10 @@ cat> /usr/local/etc/xray/vless-$user.json<<END
     },
   "inbounds": [
     {
-      "port":$PORT,
+      "port": "vless",
       "listen": "127.0.0.1", 
       "tag": "VLESS-in", 
-      "protocol": "VLESS", 
+      "protocol": "14016",
       "settings": {
         "clients": [
           {
@@ -100,17 +98,17 @@ cat> /usr/local/etc/xray/vless-$user.json<<END
   }
 }
 END
-sed -i '$ i### Vless '"$user"' '"$exp"'' /etc/nginx/conf.d/xray.conf
-sed -i '$ ilocation /worryfree' /etc/nginx/conf.d/xray.conf
-sed -i '$ i{' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_pass http://127.0.0.1:'"$PORT"';' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conff
-sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
-sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
+sed -i '$ i### Vless '"$user"' '"$exp"'' /etc/nginx/conf.d/vps.conf
+sed -i '$ ilocation /worryfree' /etc/nginx/conf.d/vps.conf
+sed -i '$ i{' /etc/nginx/conf.d/vps.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/vps.conf
+sed -i '$ iproxy_pass http://127.0.0.1:14016;' /etc/nginx/conf.d/vps.conf
+sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/vps.conf
+sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/vps.conf
+sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/vps.conf
+sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/vps.conf
+sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/vps.conf
+sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/vps.conf
 sed -i '$ i}' /etc/nginx/conf.d/vps.conf
 vlesslink1="vless://${uuid}@${domain}:443/?type=ws&encryption=none&host=bug.com&path=/worryfree&security=tls&encryption=none&type=ws#${user}"
 vlesslink2="vless://${uuid}@${domain}:80?path=/worryfree&encryption=none&type=ws#${user}"
