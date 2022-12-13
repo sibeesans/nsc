@@ -94,62 +94,15 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
 # install
 apt-get --reinstall --fix-missing install -y linux-headers-cloud-amd64 bzip2 gzip coreutils wget jq screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl git lsof
-cat> /root/.profile << END
-# ~/.profile: executed by Bourne-compatible login shells.
-
-if [ "$BASH" ]; then
-  if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-  fi
-fi
-
-mesg n || true
-clear
-END
-chmod 644 /root/.profile
-
-install_ssl(){
-    if [ -f "/usr/bin/apt-get" ];then
-            isDebian=`cat /etc/issue|grep Debian`
-            if [ "$isDebian" != "" ];then
-                    apt-get install -y nginx certbot
-                    apt install -y nginx certbot
-                    sleep 3s
-            else
-                    apt-get install -y nginx certbot
-                    apt install -y nginx certbot
-                    sleep 3s
-            fi
-    else
-        yum install -y nginx certbot
-        sleep 3s
-    fi
-
-    systemctl stop nginx.service
-
-    if [ -f "/usr/bin/apt-get" ];then
-            isDebian=`cat /etc/issue|grep Debian`
-            if [ "$isDebian" != "" ];then
-                    echo "A" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
-                    sleep 3s
-            else
-                    echo "A" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
-                    sleep 3s
-            fi
-    else
-        echo "Y" | certbot certonly --renew-by-default --register-unsafely-without-email --standalone -d $domain
-        sleep 3s
-    fi
-}
 
 # install webserver
 apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/sibeesans/trojantls/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/sibeesans/nsc/main/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/sibeesans/trojantls/main/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/sibeesans/nsc/main/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
