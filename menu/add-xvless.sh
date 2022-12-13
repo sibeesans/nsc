@@ -17,7 +17,7 @@ fi
 clear 
 domain=$(cat /etc/v2ray/domain)
 read -rp "User: " -e user
-egrep -w "^### Vless $user" /etc/nginx/conf.d/vps.conf >/dev/null
+egrep -w "^### Vless $user" /etc/nginx/conf.d/xray.conf >/dev/null
 if [ $? -eq 0 ]; then
 echo -e "Username Sudah Ada"
 exit 0
@@ -100,17 +100,17 @@ cat> /usr/local/etc/xray/vless-$user.json<<END
   }
 }
 END
-sed -i '$ i### Vless '"$user"' '"$exp"'' /etc/nginx/conf.d/vps.conf
-sed -i '$ ilocation /worryfree' /etc/nginx/conf.d/vps.conf
-sed -i '$ i{' /etc/nginx/conf.d/vps.conf
-sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/vps.conf
-sed -i '$ iproxy_pass http://127.0.0.1:'"$PORT"';' /etc/nginx/conf.d/vps.conf
-sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/vps.conf
-sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/vps.conf
-sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/vps.conf
-sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/vps.conf
-sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/vps.conf
-sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/vps.conf
+sed -i '$ i### Vless '"$user"' '"$exp"'' /etc/nginx/conf.d/xray.conf
+sed -i '$ ilocation /worryfree' /etc/nginx/conf.d/xray.conf
+sed -i '$ i{' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_pass http://127.0.0.1:'"$PORT"';' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/xray.conff
+sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/xray.conf
+sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/vps.conf
 vlesslink1="vless://${uuid}@${domain}:443/?type=ws&encryption=none&host=bug.com&path=/worryfree&security=tls&encryption=none&type=ws#${user}"
 vlesslink2="vless://${uuid}@${domain}:80?path=/worryfree&encryption=none&type=ws#${user}"
