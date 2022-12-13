@@ -170,7 +170,7 @@ cat>/usr/local/etc/xray/trojanws.json<<EOF
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/worryfree",
+          "path": "/trojango",
           "headers": {
             "Host": ""
           }
@@ -282,7 +282,7 @@ echo "   - OHP SSH                 : 8181"  | tee -a log-install.txt
 echo "   - OHP Dropbear            : 8282"  | tee -a log-install.txt
 echo "   - OHP OVPN                : 8383"  | tee -a log-install.txt
 echo "   - Badvpn                  : 7300"  | tee -a log-install.txt
-#echo "   - Nginx                   : 81, 80"  | tee -a log-install.txt
+echo "   - Nginx                   : 81, 80"  | tee -a log-install.txt
 echo "   - XRAY VMESS XTLS SPLICE  : 443"  | tee -a log-install.txt
 echo "   - XRAY VMESS XTLS DIRECT  : 443"  | tee -a log-install.txt
 echo "   - XRAY VMESS WS TLS       : 443"  | tee -a log-install.txt
