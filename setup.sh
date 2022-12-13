@@ -23,7 +23,7 @@ clear
 echo ""
 echo ""
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \E[0;100;33m        • AutoScript by Bagoes-Vpn •            \E[0m"
+echo -e " \E[0;100;33m        • AutoScript by ~/.MRG •            \E[0m"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green              Proses akan mulai dalam 3 detik!            $NC"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -47,11 +47,11 @@ echo -e "$green Silahkan masukan sub domain anda $NC"
 echo -e "$green Jika tidak punya silahkan klik [ Ctrl+C ] • To-Exit $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 apt install jq curl -y
-DOMAIN=sibe-vpn.live
+DOMAIN=arshaka.tech
 sub=$(</dev/urandom tr -dc a-z | head -c4)
-SUB_DOMAIN=${sub}.sibe-vpn.live
-CF_ID=anfuji184@gmail.com
-CF_KEY=8700ccfd51dec7e1c3c95dd44250c7891b913
+SUB_DOMAIN=${sub}.arshaka.tech
+CF_ID=rega.andriana@gmail.com
+CF_KEY=7fa393c334da66a56b439deb29db45ca546a0
 set -euo pipefail
 IP2=$(wget -qO- ipinfo.io/ip);
 echo "Updating DNS for ${SUB_DOMAIN}..."
@@ -116,7 +116,7 @@ echo -e "$green      Install SSH OVPN               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/sibeesans/new-sc/main/ssh-vpn/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/sibeesans/nsc/main/ssh-vpn/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 systemctl stop nginx
 #install v2ray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -124,19 +124,16 @@ echo -e "$green  ISSUE CERT & Install TROJAN GFW       $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/sibeesans/new-sc/main/trojan/inss-vt.sh && chmod +x inss-vt.sh && screen -S v2ray ./inss-vt.sh
+wget https://raw.githubusercontent.com/sibeesans/nsc/main/trojan/inss-vt.sh && chmod +x inss-vt.sh && screen -S v2ray ./inss-vt.sh
 #Instal Xray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green          Install XRAY              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/sibeesans/new-sc/main/xray/xray.sh && chmod +x xray.sh && screen -S xray ./xray.sh
+wget https://raw.githubusercontent.com/sibeesans/nsc/main/xray/xray.sh && chmod +x xray.sh && screen -S xray ./xray.sh
 
 rm -f /root/ssh-vpn.sh
-rm -f /root/ss.sh
-rm -f /root/ssr.sh
-rm -f /root/wg.sh
 rm -f /root/inss-vt.sh
 rm -f /root/set-br.sh
 rm -f /root/xray.sh
@@ -239,7 +236,7 @@ systemctl restart xray@trojanws
 cat <<EOF> /etc/systemd/system/autosett.service
 [Unit]
 Description=autosetting
-Documentation=https://google.com
+Documentation=https://worldssh.tech
 
 [Service]
 Type=oneshot
@@ -251,6 +248,8 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable autosett
+wget -O /etc/set.sh "https://raw.githubusercontent.com/sibeesans/nsc/main/menu/set.sh"
+chmod +x /etc/set.sh
 history -c
 clear
 rm -f /root/*.sh
@@ -262,7 +261,7 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 sleep 2
 echo " "
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \E[0;100;33m        • AutoScript by Bagoes-Vpn •            \E[0m"
+echo -e " \E[0;100;33m        • AutoScript by Pantek •            \E[0m"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"  | tee -a log-install.txt
