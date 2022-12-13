@@ -22,10 +22,9 @@ if [ $? -eq 0 ]; then
 echo "Username already used"
 exit 0
 fi
-PORT=$((RANDOM + 10000))
 read -p "Expired (days): " masaaktif
 uuid=$(cat /proc/sys/kernel/random/uuid)
-uid=$(cat /proc/sys/kernel/random/uuid | sed 's/[-]//g' | head -c 14; echo;)
+read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 now=`date +"%Y-%m-%d"`
 cat> /usr/local/etc/xray/vmess-$user.json<<END
@@ -37,7 +36,7 @@ cat> /usr/local/etc/xray/vmess-$user.json<<END
     },
   "inbounds": [
     {
-    "port":$PORT,
+    "port": "23456",
       "listen": "127.0.0.1",
       "tag": "vmess-in",
       "protocol": "vmess",
@@ -104,7 +103,7 @@ sed -i '$ i### Vmess '"$user"' '"$exp"'' /etc/nginx/conf.d/vps.conf
 sed -i '$ ilocation /worryfree' /etc/nginx/conf.d/vps.conf
 sed -i '$ i{' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_redirect off;' /etc/nginx/conf.d/vps.conf
-sed -i '$ iproxy_pass http://127.0.0.1:'"$PORT"';' /etc/nginx/conf.dvps.conf
+sed -i '$ iproxy_pass http://127.0.0.1:23456;' /etc/nginx/conf.dvps.conf
 sed -i '$ iproxy_http_version 1.1;' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_set_header X-Real-IP \$remote_addr;' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;' /etc/nginx/conf.d/vps.conf
