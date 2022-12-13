@@ -50,7 +50,7 @@ cat> /usr/local/etc/xray/vless-$user.json<<END
       "streamSettings": {
         "network": "ws", 
         "wsSettings": {
-        "path":"/worryfree"
+        "path":"/vless"
         }
       }
     }
@@ -110,8 +110,8 @@ sed -i '$ iproxy_set_header Upgrade \$http_upgrade;' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_set_header Connection "upgrade";' /etc/nginx/conf.d/vps.conf
 sed -i '$ iproxy_set_header Host \$http_host;' /etc/nginx/conf.d/vps.conf
 sed -i '$ i}' /etc/nginx/conf.d/vps.conf
-vlesslink1="vless://${uuid}@${domain}:443/?type=ws&encryption=none&host=bug.com&path=/worryfree&security=tls&encryption=none&type=ws#${user}"
-vlesslink2="vless://${uuid}@${domain}:80?path=/worryfree&encryption=none&type=ws#${user}"
+vlesslink1="vless://${uuid}@${domain}:443/?type=ws&encryption=none&host=bug.com&path=/vless&security=tls&encryption=none&type=ws#${user}"
+vlesslink2="vless://${uuid}@${domain}:80?path=/vless&encryption=none&type=ws#${user}"
 systemctl start xray@vless-$user
 systemctl enable xray@vless-$user
 #echo -e "\033[32m[Info]\033[0m Xray-Vless Start Successfully !"
@@ -128,7 +128,7 @@ echo -e "Port NTLS      : 80"
 echo -e "ID             : ${uuid}"
 echo -e "Encryption     : none"
 echo -e "Network        : ws"
-echo -e "Path           : /worryfree"
+echo -e "Path           : /vless"
 echo -e "=================================" | lolcat
 echo -e "Link TLS       : ${vlesslink1}"
 echo -e "=================================" | lolcat
