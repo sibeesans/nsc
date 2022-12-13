@@ -47,11 +47,11 @@ echo -e "$green Silahkan masukan sub domain anda $NC"
 echo -e "$green Jika tidak punya silahkan klik [ Ctrl+C ] • To-Exit $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 apt install jq curl -y
-DOMAIN=arshaka.tech
-sub=$(</dev/urandom tr -dc a-z | head -c4)
-SUB_DOMAIN=${sub}.arshaka.tech
-CF_ID=rega.andriana@gmail.com
-CF_KEY=7fa393c334da66a56b439deb29db45ca546a0
+DOMAIN=sibe-vpn.live
+sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
+SUB_DOMAIN=${sub}.sibe-vpn.live
+CF_ID=anfuji184@gmail.com
+CF_KEY=8700ccfd51dec7e1c3c95dd44250c7891b913
 set -euo pipefail
 IP2=$(wget -qO- ipinfo.io/ip);
 echo "Updating DNS for ${SUB_DOMAIN}..."
